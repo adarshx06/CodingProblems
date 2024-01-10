@@ -22,3 +22,20 @@ class Solution {
 
 //Recursive Approach
 
+class Solution {
+    public ListNode reverseList(ListNode head) {
+       //base case
+       if(head == null || head.next == null){
+           return head;
+       }
+       //condtion
+       
+       ListNode reversed = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return reversed;
+       //recursive call
+
+    }
+}
